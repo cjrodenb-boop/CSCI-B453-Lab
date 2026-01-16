@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         rotX = Input.GetAxis("Mouse X") * sensitivity;
         rotY = Input.GetAxis("Mouse Y") * sensitivity;
 
-        rotY = Mathf.Clamp(rotY, -60f, 60f);
+        rotY -= Mathf.Clamp(rotY, -60f, 60f);
 
         Vector3 movement = new Vector3(moveLR, 0, moveFB).normalized * movementSpeed;
         transform.Rotate(0, rotX, 0);
